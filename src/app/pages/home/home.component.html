@@ -1,0 +1,29 @@
+<div class="background-video">
+    <video autoplay muted loop id="video-background">
+      <source src="../../../assets/img/bg1.mp4" type="video/mp4">
+    </video>
+</div>
+<div>
+  <h1>Destiny<img src="../../../assets/img/logo.png" alt=""></h1>
+  
+  <h1>Builds</h1>
+  
+</div>
+<div class="login">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>EMAIL:</mat-label>
+        <input matInput placeholder="Example@example.com">
+      </mat-form-field>
+    </div>
+  
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>PASSWORD:</mat-label>
+        <input matInput type="password">
+      </mat-form-field>
+    </div>
+    <button mat-flat-button type="submit">Login</button>
+  </form>
+</div>
