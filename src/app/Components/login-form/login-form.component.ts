@@ -1,18 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import { LoginRegisterComponent } from '../../Components/login-register/login-register.component';
+import { RouterLink } from '@angular/router';
+import { Router } from 'express';
+
 @Component({
-  selector: 'app-home',
+  selector: 'app-login-form',
   standalone: true,
-  imports: [ReactiveFormsModule,FormsModule, MatFormFieldModule, MatInputModule,MatButtonModule,MatIconModule,LoginRegisterComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  imports: [ReactiveFormsModule,FormsModule, MatFormFieldModule, 
+    MatInputModule,MatButtonModule,MatIconModule, RouterLink],
+  templateUrl: './login-form.component.html',
+  styleUrl: './login-form.component.scss'
 })
-export class HomeComponent implements OnInit {
+export class LoginFormComponent {
 
   loginForm!: FormGroup;
 
