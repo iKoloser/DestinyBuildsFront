@@ -1,11 +1,42 @@
 <html>
     <body>
-        @for (data of data; track $index) {
-            <div class="card">
-                <h1>{{data.nombre}}</h1>
-                <img [src]="getArma1ImgUrl(data.armaPrincipalId)" alt="">
+        @for (item of data; track $index) {
+            
+            <div class="card" (click)="handleClick()">
+                
+                <h1>{{item.nombre}}</h1>
+                <div class="img">
+            
+                    <img [src]="item.claseImgUrl" alt="Clase">
+                </div>
+                
+                <div class="img">
+    
+                    <img [src]="item.subclaseImgUrl" alt="Subclase">
+                </div>
+            <div class="img">
+                <img [src]="item.armaPrincipalImgUrl" alt="Arma Principal">
             </div>
-        }
+            
+            <div class="img">
+                
+                <img [src]="item.armaSecundariaImgUrl" alt="Arma Secundaria">
+            </div>
+            
+            <div class="img">
+                <img [src]="item.armaTerciariaImgUrl" alt="Arma Terciaria">
+            </div>
+            
+            <div class="img">
+            
+                <img [src]="item.armaduraExoticaImgUrl" alt="Armadura Exótica">
+            </div>
+            
+            
+            </div>
+        
+        
+    }
         
           
     </body>

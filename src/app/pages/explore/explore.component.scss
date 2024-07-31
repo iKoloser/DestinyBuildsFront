@@ -8,15 +8,49 @@ html, body {
     flex-direction: column;
     justify-content: center; /* Centra horizontalmente */
     align-items: center;
+    margin-bottom: 15%;
 }
 
 .card{
-    display: flex;
-    flex-direction: column;
-    margin-top: -15%;
-    margin-bottom: 5%;
-    background-color: #5250cc;
-    width: 30%;
+            
+            display: flex;
+            margin-bottom: 2%;
+            background-color: rgba(82, 80, 204, 0.2);
+            width: 40%;
+            border-radius: 10px;
+            padding: 2%;
+            text-decoration: none; /* Quita el subrayado */
+            cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-color: black;
+            border: 1px solid;
+}
+
+.card:hover{
+    background-color: rgba(82, 80, 204, 0.4);
+    transform: scale(1.1);
+    
+}
+
+.card > .item:nth-child(n + 4) {
+    margin-top: 0; /* Elimina margen superior en la segunda línea */
+  }
+
+img{
+    width: 70px;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+img:hover{
+    transform: scale(1.1);
+}
+
+.img{
+    margin-right: 3%;
+}
+
+a {
+    display: block; /* O block, según el contexto */
+    text-decoration: none;
 
 }
