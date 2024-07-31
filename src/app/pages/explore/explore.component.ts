@@ -27,7 +27,7 @@ export class ExploreComponent implements OnInit{
   }
 
   llenarData(){
-    this.MyApiService.getData().subscribe((data) => {
+    this.MyApiService.getDataBuilds().subscribe((data) => {
       this.data = data
       console.log(this.data);
     })
