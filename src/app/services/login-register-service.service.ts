@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginRegisterServiceService {
 
-  private urlApi = 'http://localhost:5194/api/account/login';  
+  private urlApi = 'http://localhost:5194/api/account';  
 
 
   constructor() { }
@@ -16,7 +16,11 @@ export class LoginRegisterServiceService {
 
   login(credentials: { UserName: string; Password: string }): Observable<any> {
     console.log(credentials);
-    return this.http.post(`${this.urlApi}`, credentials);
+    return this.http.post(`${this.urlApi}/login`, credentials);
+  }
+
+  register(credentials: { UserName: string; Password: string }): Observable<any> {
+    return this.http.post(`${this.urlApi}/register`, credentials);
   }
 
 
