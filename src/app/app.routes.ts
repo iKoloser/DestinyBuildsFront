@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthGuardIsLogedService } from './services/auth-guard-is-loged.service';
+import { CreateComponent } from './pages/create/create.component';
 
 export const routes: Routes = [
     {
@@ -37,6 +38,11 @@ export const routes: Routes = [
         path: 'register',
         component: RegisterComponent,
         canActivate: [AuthGuardIsLogedService]
+    },
+    {
+        path: 'create',
+        component: CreateComponent,
+        canActivate: [AuthGuardService]
     }
 
 ];

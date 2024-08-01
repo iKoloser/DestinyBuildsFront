@@ -1,0 +1,82 @@
+<html lang="es">
+<body>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="input-container build">
+
+            
+            <mat-label>Nombre de la Build:</mat-label>
+            <br>
+            <input matInput placeholder="Ex. Cazador DPS" formControlName="nombre">
+
+        </div>
+
+
+        <div class="select-container Clase">
+            <label for="clase">Clase:</label>
+            <select id="clase" name="clase" formControlName="claseId">
+                @for (cla of clase; track $index) {
+                <option  [value]="cla.id">{{cla.nombre}}</option>
+            }
+            </select>
+        </div>
+
+        <div class="select-container Subclase">
+            <label for="subclase">Subclase:</label>
+            <select id="subclase" name="subclase" formControlName="subclaseId">
+                @for (sub of subclase; track $index) {
+                    <option [value]="sub.id">{{sub.nombre}}</option>
+                }
+            </select>
+        </div>
+
+
+
+        <div class="select-container Arma1">
+
+            
+            <label for="arma1">Arma 1:</label>
+            <select id="arma1" name="arma1" formControlName="armaPrincipalId">
+                @for (arma of armas; track $index) {
+                <option [value]="arma.id" value={{arma.nombre}}>{{arma.nombre}}</option>
+            }
+            
+            </select>
+        
+        
+        </div>
+
+        <div class="select-container Arma2">
+            <label for="arma2">Arma 2:</label>
+            <select id="arma2" name="arma2" formControlName="armaSecundariaId">
+                @for (arma of armas; track $index) {
+                    <option [value]="arma.id">{{arma.nombre}}</option>
+                }
+            </select>
+        </div>
+
+        <div class="select-container Arma3">
+            <label for="arma3">Arma 3:</label>
+            <select id="arma3" name="arma3" formControlName="armaTerciariaId">
+                @for (arma of armas; track $index) {
+                    <option [value]="arma.id">{{arma.nombre}}</option>
+                }
+            </select>
+        </div>
+
+        <div class="select-container ArmaduraExotica">
+            <label for="armadura_exotica">Armadura Exótica:</label>
+            <select id="armadura_exotica" name="armadura_exotica" formControlName="armaduraExoticaId">
+                @for (armadura of armadurasExotica; track $index) {
+                    <option [value]="armadura.id">{{armadura.nombre}}</option>
+                }
+            </select>
+        </div>
+
+        <br>
+        <button mat-raised-button id="loginRegister" type="submit">Register</button> 
+
+
+    </form>
+</body>
+</html>

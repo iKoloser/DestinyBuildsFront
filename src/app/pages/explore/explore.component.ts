@@ -14,12 +14,11 @@ import { catchError, map } from 'rxjs/operators';
   providers: [MyApiService],
 })
 export class ExploreComponent implements OnInit {
-  data: any[] = []; // Datos principales
-  imageCache: Map<number, string> = new Map(); // Cache para URLs de imágenes de armas
-  armaduraCache: Map<number, string> = new Map(); // Cache para URLs de imágenes de armaduras exóticas
-  claseCache: Map<number, string> = new Map(); // Cache para URLs de imágenes de clases
-  subclaseCache: Map<number, string> = new Map(); // Cache para URLs de imágenes de subclases
-
+  data: any[] = []; 
+  imageCache: Map<number, string> = new Map();
+  armaduraCache: Map<number, string> = new Map(); 
+  claseCache: Map<number, string> = new Map(); 
+  subclaseCache: Map<number, string> = new Map();
   constructor(private myApiService: MyApiService) {}
 
   ngOnInit(): void {
@@ -34,7 +33,6 @@ export class ExploreComponent implements OnInit {
     this.myApiService.getDataBuilds().subscribe(builds => {
       this.data = builds;
 
-      // Cargar los detalles relacionados
       this.data.forEach(item => {
         this.getArmaImgUrl(item.armaPrincipalId).subscribe(imgUrl => item.armaPrincipalImgUrl = imgUrl);
         this.getArmaImgUrl(item.armaSecundariaId).subscribe(imgUrl => item.armaSecundariaImgUrl = imgUrl);
